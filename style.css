@@ -21,8 +21,7 @@ nav
 nav .logo
 {
   height: auto;
-  width: 17rem;
-  transform: translateY(5%);
+  width: 15%;
 }
 .toggle
 {
