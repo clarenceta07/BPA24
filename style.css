@@ -105,13 +105,13 @@ nav .logo
   line-height: 1em;
   text-transform: uppercase;
 }
-.text p
-{
-  font-size: 1.1em;
-  color: #fff;
-  margin: 20px 0;
-  font-weight: 400;
-  max-width: 700px;
+.text h3:hover {
+  color: goldenrod;
+  user-select: none;
+}
+.text h2:hover {
+  color: goldenrod;
+  user-select: none;
 }
 .text a
 {
@@ -130,6 +130,7 @@ nav .logo
 .text a:hover
 {
   letter-spacing: 6px;
+  background-color: goldenrod;
 }
 .social
 {
@@ -178,12 +179,12 @@ nav .logo
 .menu ul li a
 {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 2rem;
   color: #111;
 }
 .menu ul li a:hover
 {
-  color: #03a9f4; 
+  color: goldenrod; 
 }
 
 @media (max-width: 991px)
