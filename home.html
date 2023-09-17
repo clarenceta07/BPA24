@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Day Grill</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
       
@@ -15,18 +16,25 @@
           </a>
           <div class="toggle"></div>
         </nav>
-        <video src="https://cdn.discordapp.com/attachments/1062156955151507456/1151690140847194122/y2mate.is_-_Copyright_Free_mexican_beach_restaurant_table_next_to_ocean_tropical_resort_bg9c4bp_h_D-l1jF8GkG2J8-1080pp-1694654515.mp4" muted loop autoplay></video>
+
+        <video class="video-slide active" src="https://cdn.discordapp.com/attachments/1062156955151507456/1151690140847194122/y2mate.is_-_Copyright_Free_mexican_beach_restaurant_table_next_to_ocean_tropical_resort_bg9c4bp_h_D-l1jF8GkG2J8-1080pp-1694654515.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://cdn.discordapp.com/attachments/1062156955151507456/1151683565340332092/Background_Video.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://cdn.discordapp.com/attachments/1062156955151507456/1152607855875207208/Beach_Cafe___Copyright_Free_Video_Footage.mp4" autoplay muted loop></video>
+
+
         <div class="overlay"></div>
         <div class="text">
           <h2>Game Day Grill</h2> 
           <h3>On the Water</h3>
           <a href="#">Reserve a Table</a>
         </div>
-        <ul class="social">
-          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-        </ul>
+        
+        <div class="slider-nav">
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+        </div>
+
       </section>
       <div class="menu">
         <ul>
@@ -36,15 +44,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <script>
-            const menuToggle = document.querySelector('.toggle');
-          const showcase = document.querySelector('.showcase');
-    
-          menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            showcase.classList.toggle('active');
-          })
-        </script>  
+       
       </div>
   
 </body>
