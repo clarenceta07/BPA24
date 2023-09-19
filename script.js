@@ -8,28 +8,16 @@ const menuToggle = document.querySelector('.toggle');
           })
 
 //video slider
-const btns = document.querySelectorAll(".nav-btn");
-const slides = document.querySelectorAll(".video-slide");
-
-
-var sliderNav = function(manual) {
-    btns.forEach((btn) => {
-        btn.classList.remove("active");
-    });
-
-    slides.forEach((slide) => {
-        slide.classList.remove("active");
-    });
-    
-    btns[manual].classList.add("active");
-    slides[manual].classList.add("active");
-
-
-}
-
-btns.forEach((btn,i) => {
-    btn.addEventListener("click", () => {
-        sliderNav(i);
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = new Flickity(".carousel", {
+      cellAlign: "left",
+      contain: true,
+      wrapAround: true,
+      draggable: true,
+      autoPlay: 5000,
+      prevNextButtons: false,
+      pageDots: true,
+      pageDotPosition: "center"
     });
 });
 

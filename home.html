@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Day Grill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -17,10 +19,18 @@
           <div class="toggle"></div>
         </nav>
 
-        <video class="video-slide active" src="https://cdn.discordapp.com/attachments/1062156955151507456/1151690140847194122/y2mate.is_-_Copyright_Free_mexican_beach_restaurant_table_next_to_ocean_tropical_resort_bg9c4bp_h_D-l1jF8GkG2J8-1080pp-1694654515.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://cdn.discordapp.com/attachments/1062156955151507456/1151683565340332092/Background_Video.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://cdn.discordapp.com/attachments/1062156955151507456/1152607855875207208/Beach_Cafe___Copyright_Free_Video_Footage.mp4" autoplay muted loop></video>
-
+        <div class="carousel">
+          <div class="carousel-cell">
+              <video src="https://cdn.discordapp.com/attachments/1062156955151507456/1151690140847194122/y2mate.is_-_Copyright_Free_mexican_beach_restaurant_table_next_to_ocean_tropical_resort_bg9c4bp_h_D-l1jF8GkG2J8-1080pp-1694654515.mp4" autoplay loop muted></video>
+          </div>
+          <div class="carousel-cell">
+              <video src="https://cdn.discordapp.com/attachments/1062156955151507456/1152607855875207208/Beach_Cafe___Copyright_Free_Video_Footage.mp4" autoplay loop muted></video>
+          </div>
+          <div class="carousel-cell">
+              <video src="https://cdn.discordapp.com/attachments/1062156955151507456/1151683565340332092/Background_Video.mp4" autoplay loop muted></video>
+          </div>
+      </div>
+      <div class="dots"></div>
 
         <div class="overlay"></div>
         <div class="text">
@@ -29,11 +39,7 @@
           <a href="#">Reserve a Table</a>
         </div>
         
-        <div class="slider-nav">
-          <div class="nav-btn"></div>
-          <div class="nav-btn"></div>
-          <div class="nav-btn"></div>
-        </div>
+      
 
       </section>
       <div class="menu">
