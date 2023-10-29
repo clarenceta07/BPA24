@@ -92,6 +92,7 @@ nav
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
+  user-select: none;
 }
 .text h3
 {
@@ -100,6 +101,7 @@ nav
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
+  user-select: none;
 }
 .text h3:hover {
   color: #03385e;
@@ -122,6 +124,7 @@ nav
   color: #111;
   letter-spacing: 2px;
   transition: 0.2s;
+  user-select: none;
 }
 .text a:hover
 {
