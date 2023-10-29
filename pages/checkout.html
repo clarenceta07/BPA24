@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Checkout</title>
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="cart.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
 
@@ -17,7 +17,8 @@
             <ul id="cart-items">
                 <!-- Cart items will be added dynamically here -->
             </ul>
-            <p>Total: <span id="cart-total">$0</span></p>
+            <p>Total: <br><span id="cart-total">$0</span></p>
+            <div>Total Quantity:<div class="totalQuantity" id="total-quantity">0</div></div>
         </div>
 
         <!-- Checkout Form (Right Side) -->
@@ -41,13 +42,8 @@
                 </div>
 
             </div>
-            <div class="return">
-                <div class="row">
-                    <div>Total Quantity</div>
-                    <div class="totalQuantity" id="total-quantity">0</div>
-                </div>
-            </div>
-            <button class="buttonCheckout">CHECKOUT</button>
+
+            <a href="payment.html"><button class="buttonCheckout">CHECKOUT</button></a>
         </div>
     </div>
 
