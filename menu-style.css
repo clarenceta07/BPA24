@@ -18,7 +18,6 @@ body{
 .background {
     width: 100%;
     height: 100vh;
-    animation: fadeIn 2s;
 }
 .menu-page{
     top:0;
@@ -78,7 +77,6 @@ nav
   background-size: 30px;
   background-position: center;
   cursor: pointer;
-  animation: fadeIn 2s;
 }
 .toggle.active
 {
@@ -100,7 +98,6 @@ nav
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 2s;
   
 }
 .active-menu {
@@ -114,7 +111,6 @@ nav
 {
   list-style: none;
   transition: transform 0.2s;
-  animation: fadeIn 2s;
 }
 .menu ul li:hover
 {
@@ -346,17 +342,7 @@ nav
     background-color: white;
     z-index: 1;
     border-top: 4px solid #d1e6f7;
-    animation: fadeIn 2s;
   }
-
-  @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 .box-head {
     padding-left: 5%;
