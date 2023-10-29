@@ -26,7 +26,6 @@ body{
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px,1fr));
     grid-gap: 20px 40px;
-
 }
 .menu-logo {
     width: 60%;
@@ -60,6 +59,7 @@ nav
   align-items: center;
   transition: 0.5s;
   z-index: 90;
+  animation: fadeIn 2s;
 }
 .showcase.active
 {
@@ -98,6 +98,7 @@ nav
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 5s;
   
 }
 .active-menu {
@@ -332,6 +333,34 @@ nav
     color: white;
 }
 
+.slide-in-text {
+    width: 500px;
+    height: 250px;
+    background-color: #fff;
+    position: absolute;
+    left: -300px; /* Initially hidden outside the viewport on the left */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+    animation: slide-in 1s forwards; /* Use CSS animation to slide in */
+}
+
+.slide-in-text:hover {
+    transform: scale(1.08);
+
+}
+
+@keyframes slide-in {
+    0% {
+        left: -300px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.slide-in-text p {
+    margin: 0;
+}
+
 .box-title {
     position: absolute;
     top: 55%;
@@ -342,6 +371,7 @@ nav
     background-color: white;
     z-index: 1;
     border-top: 4px solid #d1e6f7;
+   
   }
 
 .box-head {
@@ -372,6 +402,15 @@ nav
 /* Style the button on hover */
 .remove-button:hover {
     background-color: #03385e;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
   
 
