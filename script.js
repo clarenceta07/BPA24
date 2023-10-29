@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Initialize the cart items array and total
-const cart = [];
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 let total = 0;
 
 // Function to update the cart display
@@ -74,9 +74,9 @@ function displayCart() {
 }
 
 // Function to remove an item from the cart
-function removeItemFromCart(itemToRemove) {
+function removeItemFromCart(item) {
     // Find the index of the item to remove
-    const itemIndex = cart.indexOf(itemToRemove);
+    const itemIndex = cart.indexOf(item);
 
     if (itemIndex !== -1) {
         // Remove the item from the cart
@@ -84,6 +84,9 @@ function removeItemFromCart(itemToRemove) {
 
         // Update the cart display
         displayCart();
+
+        // Update local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 }
 
@@ -95,14 +98,26 @@ addToCartButtons.forEach(button => {
         const foodItem = button.parentElement.parentElement;
         const itemName = foodItem.querySelector('h5').textContent;
         const itemPrice = parseFloat(button.getAttribute('data-price')); // Get the item price from the data attribute
+        const itemImage = foodItem.querySelector('img').src;
 
         // Add the item to the cart
-        cart.push({ name: itemName, price: itemPrice });
+        cart.push({ name: itemName, price: itemPrice, image: itemImage });
+
+        // Update local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
 
         // Update the cart display
         displayCart();
+
+       
     });
 });
+
+// Display the cart when the page loads
+displayCart();
+
+
+
 
 
 
