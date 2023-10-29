@@ -370,7 +370,7 @@ nav
     height: 250px;
     background-color: white;
     z-index: 1;
-    border-top: 4px solid #d1e6f7;
+    border: 10px solid #03385e;
    
   }
 
