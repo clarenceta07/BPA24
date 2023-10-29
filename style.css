@@ -102,11 +102,11 @@ nav
   text-transform: uppercase;
 }
 .text h3:hover {
-  color: goldenrod;
+  color: #03385e;
   user-select: none;
 }
 .text h2:hover {
-  color: goldenrod;
+  color: #03385e;
   user-select: none;
 }
 .text a
@@ -126,7 +126,7 @@ nav
 .text a:hover
 {
   letter-spacing: 6px;
-  background-color: goldenrod;
+  background-color: #03385e;
 }
 .menu
 {
@@ -135,10 +135,10 @@ nav
   right: 0;
   width: 300px;
   height: 100%;
-  z-index: -1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .menu ul
 {
@@ -147,6 +147,12 @@ nav
 .menu ul li
 {
   list-style: none;
+  transition: transform 0.2s;
+}
+.menu ul li:hover
+{
+  list-style: none;
+  transform: scale(1.2);
 }
 .menu ul li a
 {
@@ -156,7 +162,7 @@ nav
 }
 .menu ul li a:hover
 {
-  color: goldenrod; 
+  color: #03385e; 
 }
 
 @media (max-width: 991px)
@@ -231,9 +237,9 @@ body {
 }
 
 .flickity-page-dots .dot {
-  width: 12px;
-  height: 12px;
-  background: white;
+  width: 10px;
+  height: 10px;
+  background: #d1e6f7;
   margin: 0 8px;
   border-radius: 50%;
   opacity: 0.7;
@@ -241,6 +247,7 @@ body {
 }
 
 .flickity-page-dots .dot.is-selected {
-  background: goldenrod;
+  background: #03385e;
+  transform: scale(1.3);
 }
 
