@@ -131,6 +131,7 @@ nav
 .text a:hover
 {
   letter-spacing: 6px;
+  color: white;
   background-color: #03385e;
 }
 .menu
