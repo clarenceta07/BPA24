@@ -47,5 +47,25 @@
         </div>
     </div>
 
+    <script>
+        // Get a reference to the button and form fields
+        const checkoutButton = document.querySelector(".buttonCheckout");
+        const nameField = document.getElementById("name");
+        const phoneField = document.getElementById("phone");
+        const addressField = document.getElementById("address");
+    
+        // Add a click event listener to the button
+        checkoutButton.addEventListener("click", function(event) {
+            if (nameField.value === "" || phoneField.value === "" || addressField.value === "") {
+                // Prevent the form from being submitted
+                event.preventDefault();
+    
+                // Display a popup message
+                alert("Please fill in all the required fields.");
+            }
+        });
+    </script>
+ 
+
 </body>
 </html>
