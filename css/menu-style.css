@@ -376,7 +376,7 @@ nav
     background-color: white;
     z-index: 1;
     border: 10px solid #03385e;
-   
+    user-select: none;
   }
 
 .box-head {
