@@ -45,6 +45,7 @@ nav
   justify-content: space-between;
   align-items: center;
   pointer-events: auto;
+  user-select: none;
 }
 
 .showcase
@@ -112,6 +113,7 @@ nav
 {
   list-style: none;
   transition: transform 0.2s;
+  user-select: none;
 }
 .menu ul li:hover
 {
@@ -199,6 +201,7 @@ nav
     grid-column: 1/-1;
     text-align: center;
     margin: 30px;
+    user-select: none;
 }
 .heading h1{
     font-weight: 400;
@@ -331,6 +334,7 @@ nav
     font-size: 1rem;
     border-radius: 5px;
     font-family: 'Poppins',sans-serif; 
+    user-select: none;
 }
 
 .checkout:hover {
@@ -383,7 +387,7 @@ nav
     padding-left: 5%;
     padding-top: 6%;
     font-weight: 0;
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -391,6 +395,9 @@ nav
     padding-left: 5%;
     padding-top: 1%;
     margin-right: 5%;
+    padding-right: 1%;
+    font-size: .93rem;
+
 }
 
 /* Add styles for the "Remove" button */

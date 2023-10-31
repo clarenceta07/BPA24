@@ -1,6 +1,8 @@
 /* Add styles for the checkout page */
 body {
     font-family: Arial, sans-serif;
+    background: #131313;
+
 }
 
 .cart-item-image {
@@ -13,6 +15,12 @@ body {
     padding: 20px;
     min-height: 100%; /* Expand to the height of the viewport */
     padding-top: 5%;
+    color: #fff;
+
+}
+
+.checkout-container {
+    font-family: Poppins;
 }
 
 .cart-items {
@@ -32,16 +40,17 @@ body {
 
 .remove-button {
     float: right; 
-    background-color: #03385e;
+    background-color: black;
     color: #fff; 
-    padding: 5px 10px; 
+    padding: 10px 20px; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .remove-button:hover {
-    background-color: #7d96ac;
+    background-color: #d1e6f7;
+    color: black;
 }
 
 /* Add this to your CSS file or create a new one (e.g., back-button.css) */
@@ -50,7 +59,7 @@ body {
     top: 10px; /* Adjust the vertical position as needed */
     left: 10px; /* Adjust the horizontal position as needed */
     text-decoration: none;
-    color: #007bff; /* Link color */
+    color: white; /* Link color */
     font-size: 1.5rem;
     padding-top: 2%;
     padding-left: 2%;
@@ -61,12 +70,8 @@ body {
     justify-content: space-between;
     margin-bottom: 5px;
     font-size: 1.2rem;
+    color: #fff;
     font-family: 'Poppins',sans-serif; 
-
-}
-
-.back-button:hover {
-    color: #0056b3; /* Link color on hover */
 }
 
 .cart-item-image {
@@ -80,40 +85,75 @@ ul {
     font-family: 'Poppins',sans-serif; 
     font-size: 1.2rem;
     top: 20px;
-    
+    color: #fff;
+
 }
 
 li {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
-    
+    color: #fff;
+
 }
 
 .checkout-form form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+    color: #fff;
+
+}
+
+.checkout-form h1 {
+    color: #fff;
+}
+
+.form input {
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 1px solid rgb(104, 104, 104);
+	outline: none;
+	padding: 20px 20px 20px 0;
+	margin: 0 0px;
+	color: #fff;
+	font-family: Poppins;
+	font-size: .9rem;
+	font-weight: 400;
+}
+
+.form-row {
+	display: flex;
 }
 
 label, input, select {
     width: 90%;
     padding: 10px;
     margin: 5px 0;
+    color: #fff;
+
 }
 
 .buttonCheckout {
     width: 30%;
-    background-color: #007bff;
     justify-content: center;
     align-items: center;
+	background: #000;
     color: #fff;
     border: none;
     border-radius: 5px;
+    font-family: Poppins;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
-.buttonCheckout:hover {
-    background-color: #0056b3;
+.checkoutButton {
+    padding-top: 2%;
 }
+
+.buttonCheckout:hover {
+    background-color: #d1e6f7;
+    color: black;
+}
+
