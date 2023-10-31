@@ -41,6 +41,7 @@ body {
 .remove-button {
     float: right; 
     background-color: black;
+    font-family: Poppins;
     color: #fff; 
     padding: 10px 20px; 
     border: none;
