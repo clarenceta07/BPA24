@@ -42,9 +42,11 @@ let total = 0;
 function displayCart() {
     const cartList = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
+    const totalQuantity = document.getElementById('total-quantity'); // New line
     cartList.innerHTML = ''; // Clear the existing cart items
 
     total = 0;
+    quantity = 0;
     cart.forEach(item => {
         // Create a "Remove" button for the item
         const removeButton = document.createElement('button');
@@ -60,7 +62,7 @@ function displayCart() {
 
         // Create a list item for the cart
         const cartItem = document.createElement('li');
-        cartItem.innerHTML = `${item.name}: $${item.price}`;
+        cartItem.innerHTML = `1x ${item.name}`;
         cartItem.appendChild(removeButton);
 
         // Add the item to the cart display
@@ -68,9 +70,13 @@ function displayCart() {
 
         // Update the total
         total += item.price;
+        quantity++;
+
+
     });
 
     cartTotal.textContent = `$${total.toFixed(2)}`;
+    totalQuantity.textContent = quantity; // Update the total quantity
 }
 
 // Function to remove an item from the cart
@@ -81,7 +87,6 @@ function removeItemFromCart(item) {
     if (itemIndex !== -1) {
         // Remove the item from the cart
         cart.splice(itemIndex, 1);
-
         // Update the cart display
         displayCart();
 

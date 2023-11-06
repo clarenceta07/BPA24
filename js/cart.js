@@ -29,8 +29,7 @@ function displayCart() {
  // Create a list item for the cart
  const cartItem = document.createElement('li');
  cartItem.innerHTML = `
-     <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-     ${item.name}: $${item.price}
+     1x ${item.name}
  `;
         
         cartItem.appendChild(removeButton);
