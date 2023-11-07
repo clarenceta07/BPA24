@@ -121,6 +121,43 @@ addToCartButtons.forEach(button => {
 // Display the cart when the page loads
 displayCart();
 
+const shoppingCart = document.querySelector('.shopping-cart');
+const initialTop = 125; // Set the initial position here (adjust as needed)
+const minTopPercentage = 125; // Minimum top position as a percentage
+const maxTopPercentage = 500; // Maximum top position as a percentage
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY || window.pageYOffset;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate the minimum and maximum top positions based on percentages
+    const minTop = (minTopPercentage / 100) * viewportHeight;
+    const maxTop = (maxTopPercentage / 100) * viewportHeight;
+
+    // Calculate the new top position, constrained by the min and max values
+    const newTop = Math.min(maxTop, Math.max(minTop, initialTop + scrollPosition));
+
+    shoppingCart.style.top = newTop + 'px';
+});
+
+const arrowElement = document.querySelector('.arrow');
+
+arrowElement.addEventListener('click', function() {
+    const scrollPosition = window.innerHeight; // Set to 100vh
+
+    // Use smooth scrolling to scroll to the calculated position
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth' // Adds smooth scrolling animation
+    });
+});
+
+
+
+
+
+
+
 
 
 
