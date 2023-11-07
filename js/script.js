@@ -122,8 +122,8 @@ addToCartButtons.forEach(button => {
 displayCart();
 
 const shoppingCart = document.querySelector('.shopping-cart');
-const initialTop = 125; // Set the initial position here (adjust as needed)
-const minTopPercentage = 125; // Minimum top position as a percentage
+const initialTop = 140; // Set the initial position here (adjust as needed)
+const minTopPercentage = 135; // Minimum top position as a percentage
 const maxTopPercentage = 500; // Maximum top position as a percentage
 
 window.addEventListener('scroll', function() {
