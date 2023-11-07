@@ -31,10 +31,27 @@ body{
     .menu-page {
         top:0;
         left:0;
-        width: 55%;
+        width: 50%;
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(35%,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(40%,1fr));
         grid-gap: 2px 4px;    }
+        .food-items{
+            display: grid;
+            position: relative;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 1fr; /* Add this line to define a single column */
+            border-radius: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin: 10px 30px;
+            padding: 8%;
+            z-index: 100;
+
+            border: 2px solid black;
+        
+        }
+        .shopping-cart {
+            width: 40%;
+        }
   }
 .menu-logo {
     width: 60%;
