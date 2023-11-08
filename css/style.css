@@ -192,6 +192,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #d1e6f7;
 }
 
 .carousel-cell {
