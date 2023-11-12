@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="../css/reserve.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 </head>
 <body>
-  <div id = "wrapper">
+  <div id = "parallaxWrapper">
+
     <section class="showcase">
       <nav class="sidebar">
-          <a class="click-image" href="home.html">
+          <a class="click-image" href="../index.html">
           <img class="menu-logo" width="14%" src="../images/logo.png">
           </a>
           <div class="toggle" id="toggleButton"></div>
@@ -25,7 +26,7 @@
         <img class="background" src="https://images.wallpaperscraft.com/image/single/evening_table_dinner_48367_3840x2160.jpg">
         <div class="box-title">
           <div class="slide-in-text">
-          <p class="box-head">OUR MENU</p>
+          <p class="box-head">RESERVE</p>
           <p class="box-content">Join us at Game Day Grille where the game meets the waves! Reserve your table for an unbeatable vibe by the shore. Cheers, chow down, and chill with the ocean view.</p>
       </div>
   </div>
@@ -72,7 +73,7 @@
         <div class="hotspot circle" data-table="Table 16" style="top:865px; left:284px; width:50px; height:50px;"></div>
         <div class="hotspot circle" data-table="Table 17" style="top:113px; left:298px; width:28px; height:28px;"></div>
         <div class="hotspot circle" data-table="Table 18" style="top:113px; left:516px; width:32px; height:32px;"></div>
-        <div class="hotspot circle" data-table="Table 19" style="top:855px; left:136px; width:82px; height:82px;"></div>
+        <div class="hotspot circle" data-table="Table 19" style="top:855px; left:117px; width:82px; height:82px;"></div>
         
         <!-- Rectangle Hotspots -->
         <div class="hotspot rect" data-table="Table 15" style="top:579px; left:105px; width:71px; height:244px;"></div>
@@ -189,7 +190,84 @@
       
   </section>
   <!-- The Popup -->
-  
+  <footer class="footer-distributed" style = "display: flex; justify-content: space-around; align-items: center;">
+
+    <div class="footer-left" style = "width: 34vw;">
+      <img width="50%" src="../images/logo.png">
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div class="footer-center" style = "width: 33vw;">
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="time-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="time"><p><span>Monday - Friday</span> 6PM - 1AM</p></ion-label>
+          <ion-label id="time"><p><span>Saturday</span> 3PM - 3AM</p></ion-label>
+        </ion-item> 
+      </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="location-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="location"><p><span>444 S. Cedros Ave</span> Miami, Florida</p></ion-label>
+        </ion-item> 
+      </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="call-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="phone"><p>+1.555.555.5555</p></ion-label>
+        </ion-item> 
+      </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="mail-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="email"><p><a href="mailto:contact@gamedaygrille.com">contact@gamedaygrille.com</a></p></ion-label>
+        </ion-item> 
+      </div>
+
+    </div>
+
+    <div class="footer-right" style = "width: 34vw;">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Game Day Grille: Bringing the spirit of Miami Beach to life with island flavors and a lively, sports-friendly atmosphere.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-youtube"></ion-icon></i></a>
+        <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+
+      </div>
+
+      <p class="footer-links">
+        <a href="../index.html" class="link-1">Home</a>
+        
+        <a href="menu.html">Menu</a>
+      
+        <a href="reserve.html">Reserve</a>
+        
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Game Day Grille © 2015</p>
+
+    </div>
+
+  </footer>
 
   <map name="image-map">
     <area target="" alt="" title="" href="" coords="343,763,48" shape="circle">
@@ -215,5 +293,5 @@
 </map>
 
 
-<script src="reserve.js" defer></script>
+<script src="../js/reserve.js" defer></script>
 </body>

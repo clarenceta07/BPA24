@@ -8,196 +8,309 @@
     <link rel="stylesheet" href="../css/menu-style.css">
     <script src="../js/script.js" defer></script>
     <script src="../js/cart.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 </head>
 <body>
-    <section class="showcase">
-        <nav class="sidebar">
-            <a class="click-image" href="../index.html">
-            <img class="menu-logo" src="../images/logo.png">
-            </a>
-            <div class="toggle" id="toggleButton"></div>
-          </nav>
-          <img class="background" src="../images/background-menu2.jpeg">
-          <div class="box-title">
-            <div class="slide-in-text">
-            <p class="box-head">OUR MENU</p>
-            <p class="box-content">Nestled along the sandy shores of Miami, Game Day Grill elevates beachside dining by offering a diverse menu crafted from the freshest ingredients. Our establishment not only delights the palate but also enhances the viewer experience on Game Day, with large screens and a lively ambiance that complements our top-quality ingredients.</p>
-        </div>
-    </div>
-          
-    </section>
-
-    <div id="elementToHide" class="scroll-arrows">
-        <div class="arrow"></div>
-
-    </div>
-
-    <script>
-        window.addEventListener("scroll", function() {
-            var elementToHide = document.getElementById("elementToHide");
-            elementToHide.style.display = "none"; // Hide the element when any scrolling occurs
-        });
-    </script>
-
-    <div class="menu">
-        <ul>
-          <li><a href="../index.html" class="underline-effect">Home</a></li>
-          <li><a href="menu.html" class="active" class="underline-effect">Menu</a></li>
-          <li><a href="reserve.html" class="underline-effect">Reserve</a></li>
-          <li><a href="contact.html" class="underline-effect">Contact</a></li>
-        </ul>
-       
-      </div>
-
-
-      <section class="main-content" style="background-color: #d1e6f7;"> 
-
-      <div class="heading">
-        <h3>&mdash; MENU &mdash;</h3>
-    </div>
-
-        
-    <section class="menu-page">
-
-        <div class="food-items">
-            <img src="../images/tomahawk.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Seaside Steak (SPECIAL)</h5>
-                    <h5 class="price"> $50 </h5>
-                </div>
-                <p>A premium, flame-grilled Tomahawk steak, marinated to perfection.</p>
-                <button class="shop-item-button" data-price="50">Add to Cart</button>
+    <div id = "parallaxWrapper">
+        <section class="showcase">
+            <nav class="sidebar">
+                <a class="click-image" href="../index.html">
+                <img class="menu-logo" src="../images/logo.png">
+                </a>
+                <div class="toggle" id="toggleButton"></div>
+              </nav>
+              <img class="background" src="../images/background-menu2.jpeg">
+              <div class="box-title">
+                <div class="slide-in-text">
+                <p class="box-head">OUR MENU</p>
+                <p class="box-content">Nestled along the sandy shores of Miami, Game Day Grill elevates beachside dining by offering a diverse menu crafted from the freshest ingredients. Our establishment not only delights the palate but also enhances the viewer experience on Game Day, with large screens and a lively ambiance that complements our top-quality ingredients.</p>
             </div>
         </div>
-
-        <div class="food-items">
-            <img src="../images/hamburger.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>The Beachcomber Burger</h5>
-                    <h5 class="price"> $16 </h5>
-                </div>
-                <p>A juicy beachfront burger topped with crispy bacon and mouth-watering lettuce.</p>
-                <button class="shop-item-button" data-price="16">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items">
-            <img src="../images/lobster-roll.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Lighthouse Catch</h5>
-                    <h5 class="price"> $23 </h5>
-                </div>
-                <p>A New England classic, featuring succulent lobster meat nestled in a buttery roll with chips to go along.
-
-                </p>
-                <button class="shop-item-button" data-price="23">Add to Cart</button>
-            </div>
-        </div>
-
-
-        <div class="food-items">
-            <img src="../images/fish-tacos.jpg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Tidal Temptations
-                    </h5>
-                    <h5 class="price"> $12 </h5>
-                </div>
-                <p>A beachy delight with crispy fish, zesty slaw, and a splash of citrus.
-
-                </p>
-                <button class="shop-item-button" data-price="12">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items">
-            <img src="../images/salmon.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Sunset Seafire</h5>
-                    <h5 class="price"> $15 </h5>
-                </div>
-                <p>Tender salmon roasted to perfection, served with a sunset of flavors.
-
-                </p>
-                <button class="shop-item-button" data-price="15">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items">
-            <img src="../images/wings.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Wings of Paradise</h5>
-                    <h5 class="price"> $21 </h5>
-                </div>
-                <p>Finger-licking wings coated in smoky BBQ sauce, a beachside favorite.
-
-                </p>
-                <button class="shop-item-button" data-price="21">Add to Cart</button>
-            </div>
-        </div>
-        <div class="food-items">
-            <img src="../images/passionfruit.jpeg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Tropical Sunset Sip
-                    </h5>
-                    <h5 class="price"> $7 </h5>
-                </div>
-                <p>A dazzling cocktail with the exotic allure of passionfruit and a hint of ocean breeze.
-
-                </p>
-                <button class="shop-item-button" data-price="7">Add to Cart</button>
-            </div>
-        </div>
-        <div class="food-items">
-            <img src="../images/beer.jpg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Coastal Brew Bliss
-                    </h5>
-                    <h5 class="price"> $5 </h5>
-                </div>
-                <p>A cold and crisp brew, the ideal companion for a day at the beach.
-                </p>
-                <button class="shop-item-button" data-price="5">Add to Cart</button>
-            </div>
-        </div>
-        
-      
-
-        
+              
         </section>
-
-        <div class="shopping-cart">
-            <h3>Your Order</h3>
-            <ul id="cart-items">
-                <!-- Cart items will be added dynamically here -->
+    
+        <div id="elementToHide" class="scroll-arrows">
+            <div class="arrow"></div>
+    
+        </div>
+    
+        <script>
+            window.addEventListener("scroll", function() {
+                var elementToHide = document.getElementById("elementToHide");
+                elementToHide.style.display = "none"; // Hide the element when any scrolling occurs
+            });
+        </script>
+    
+        <div class="menu">
+            <ul>
+              <li><a href="../index.html" class="underline-effect">Home</a></li>
+              <li><a href="menu.html" class="active" class="underline-effect">Menu</a></li>
+              <li><a href="reserve.html" class="underline-effect">Reserve</a></li>
+              <li><a href="contact.html" class="underline-effect">Contact</a></li>
             </ul>
+           
+          </div>
+    
+    
+    <section class="main-content"> 
+    
+        <div class="heading">
+            <h3>&mdash; MENU &mdash;</h3>
+        </div>
+    
+        <div style = "display: flex; justify-content: space-around;">
             
-            <div class="bottom">
-            <div class="totalQuantity">
-                Items:
-                <p id="total-quantity">
-                0
-                </p>
+
+                <div class="menu-page" style = "display: flex; flex-direction: column; flex: 2;" >
+    
+                    <!--Row 1-->
+                    <div class = "menu-row">
+                        <div class="food-items" style = "display: flex; flex-direction: column;">
+                            <img src="../images/tomahawk.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Seaside Steak (SPECIAL)</h5>
+                                    <h5 class="price"> $50 </h5>
+                                </div>
+                                <p>A premium, flame-grilled Tomahawk steak, marinated to perfection.</p>
+                                <button class="shop-item-button" data-price="50">Add to Cart</button>
+                            </div>
+                        </div>
+                
+                        <div class="food-items">
+                            <img src="../images/hamburger.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>The Beachcomber Burger</h5>
+                                    <h5 class="price"> $16 </h5>
+                                </div>
+                                <p>A juicy beachfront burger topped with crispy bacon and mouth-watering lettuce.</p>
+                                <button class="shop-item-button" data-price="16">Add to Cart</button>
+                            </div>
+                        </div>
+                
+                        <div class="food-items">
+                            <img src="../images/lobster-roll.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Lighthouse Catch</h5>
+                                    <h5 class="price"> $23 </h5>
+                                </div>
+                                <p>A New England classic, featuring succulent lobster meat nestled in a buttery roll with chips to go along.
+                
+                                </p>
+                                <button class="shop-item-button" data-price="23">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                    <!--Row 2-->
+                    <div class = "menu-row">
+                        <div class="food-items">
+                            <img src="../images/fish-tacos.jpg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Tidal Temptations
+                                    </h5>
+                                    <h5 class="price"> $12 </h5>
+                                </div>
+                                <p>A beachy delight with crispy fish, zesty slaw, and a splash of citrus.
+                
+                                </p>
+                                <button class="shop-item-button" data-price="12">Add to Cart</button>
+                            </div>
+                        </div>
+                
+                        <div class="food-items">
+                            <img src="../images/salmon.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Sunset Seafire</h5>
+                                    <h5 class="price"> $15 </h5>
+                                </div>
+                                <p>Tender salmon roasted to perfection, served with a sunset of flavors.
+                
+                                </p>
+                                <button class="shop-item-button" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                
+                        <div class="food-items">
+                            <img src="../images/wings.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Wings of Paradise</h5>
+                                    <h5 class="price"> $21 </h5>
+                                </div>
+                                <p>Finger-licking wings coated in smoky BBQ sauce, a beachside favorite.
+                
+                                </p>
+                                <button class="shop-item-button" data-price="21">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Row 3-->
+                    <div class = "menu-row">
+                        <div class="food-items">
+                            <img src="../images/passionfruit.jpeg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Tropical Sunset Sip
+                                    </h5>
+                                    <h5 class="price"> $7 </h5>
+                                </div>
+                                <p>A dazzling cocktail with the exotic allure of passionfruit and a hint of ocean breeze.
+                
+                                </p>
+                                <button class="shop-item-button" data-price="7">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <img src="../images/beer.jpg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Coastal Brew Bliss
+                                    </h5>
+                                    <h5 class="price"> $5 </h5>
+                                </div>
+                                <p>A cold and crisp brew, the ideal companion for a day at the beach.
+                                </p>
+                                <button class="shop-item-button" data-price="5">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="food-items">
+                            <img src="../images/beer.jpg">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5>Coastal Brew Bliss
+                                    </h5>
+                                    <h5 class="price"> $5 </h5>
+                                </div>
+                                <p>A cold and crisp brew, the ideal companion for a day at the beach.
+                                </p>
+                                <button class="shop-item-button" data-price="5">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div> 
+                     
+                </div>
+            
+                <div style = "flex: 1;"">
+                    <div class="shopping-cart">
+                        <h3>Your Order</h3>
+                        <ul id="cart-items">
+                            <!-- Cart items will be added dynamically here -->
+                        </ul>
+                        
+                        <div class="bottom">
+                            <div class="totalQuantity">
+                             Items:
+                                <p id="total-quantity">
+                                    0
+                                </p>
+                            </div>
+                            <p>Total: 
+                                <span id="cart-total">
+                                $0
+                                </span>
+                             </p>
+                        </div>
+            
+                        <a href="checkout.html"><button class="checkout">Checkout</button></a>
+                    </div>
+                </div>
+                
+              
+            </div>  
+        </section>
+        <footer class="footer-distributed" style = "display: flex; justify-content: space-around; align-items: center;">
+
+            <div class="footer-left" style = "width: 34vw;">
+              <img width="50%" src="../images/logo.png">
             </div>
-            <p>Total: 
-                <span id="cart-total">
-                    $0
-                </span>
-            </p>
-        </div>
+        
+            <div>
+              
+            </div>
+        
+            <div class="footer-center" style = "width: 33vw;">
+        
+              <div>
+                <ion-item color = "dark">
+                  <ion-icon aria-hidden="true" name="time-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+                  <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+                  <ion-label id="time"><p><span>Monday - Friday</span> 6PM - 1AM</p></ion-label>
+                  <ion-label id="time"><p><span>Saturday</span> 3PM - 3AM</p></ion-label>
+                </ion-item> 
+              </div>
+        
+              <div>
+                <ion-item color = "dark">
+                  <ion-icon aria-hidden="true" name="location-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+                  <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+                  <ion-label id="location"><p><span>444 S. Cedros Ave</span> Miami, Florida</p></ion-label>
+                </ion-item> 
+              </div>
+        
+              <div>
+                <ion-item color = "dark">
+                  <ion-icon aria-hidden="true" name="call-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+                  <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+                  <ion-label id="phone"><p>+1.555.555.5555</p></ion-label>
+                </ion-item> 
+              </div>
+        
+              <div>
+                <ion-item color = "dark">
+                  <ion-icon aria-hidden="true" name="mail-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+                  <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+                  <ion-label id="email"><p><a href="mailto:contact@gamedaygrille.com">contact@gamedaygrille.com</a></p></ion-label>
+                </ion-item> 
+              </div>
+        
+            </div>
+        
+            <div class="footer-right" style = "width: 34vw;">
+        
+              <p class="footer-company-about">
+                <span>About the company</span>
+                Game Day Grille: Bringing the spirit of Miami Beach to life with island flavors and a lively, sports-friendly atmosphere.
+              </p>
+        
+              <div class="footer-icons">
+        
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-youtube"></ion-icon></i></a>
+                <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+        
+              </div>
+        
+              <p class="footer-links">
+                <a href="../index.html" class="link-1">Home</a>
+                
+                <a href="menu.html">Menu</a>
+              
+                <a href="reserve.html">Reserve</a>
+                
+                <a href="#">Contact</a>
+              </p>
+        
+              <p class="footer-company-name">Game Day Grille © 2015</p>
+        
+            </div>
+        
+          </footer>
+    </div>
 
-            <a href="checkout.html"><button class="checkout">Checkout</button></a>
-        </div>
-
-    </section>
-
+    
 </body>
 
 
