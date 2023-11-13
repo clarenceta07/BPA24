@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
     <title>Game Day Grill</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/template.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
     <script src="js/script.js" defer></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+
+
+  </head>
 <body>
-      
+
     <section class="showcase">
+      
         <nav>
           <a href="index.html">
           <img class="logo" src="images/logo.png">
@@ -43,17 +52,114 @@
       
 
       </section>
-      <div class="menu">
-        <ul>
-          <li><a href="index.html" class="active" class="underline-effect">Home</a></li>
-          <li><a href="pages/menu.html" class="underline-effect">Menu</a></li>
-          <li><a href="pages/reserve.html" class="underline-effect">Reserve</a></li>
-          <li><a href="pages/contact.html" class="underline-effect">Contact</a></li>
-        </ul>
-       
-      </div>
 
-      
-  
+            
+  <div class="menu-links">
+    <ul>
+      <li><a href="index.html" class="active" class="underline-effect" style="color: white">Home</a></li>
+      <li><a href="pages/menu.html" class="underline-effect">Menu</a></li>
+      <li><a href="pages/reserve.html" class="underline-effect">Reserve</a></li>
+      <li><a href="pages/contact.html" class="underline-effect">Contact</a></li>
+      <li>    <div class="translate" id="google_translate_element"></div>      </li>
+    </ul>
+   
+  </div>
+
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="label-2 section-subtitle" id="about-label">About Us</p>
+
+            <p class="section-text">
+              Welcome to Game Day Grill, a waterfront haven nestled on the shores of Miami Beach. Immerse yourself in the perfect fusion of game day excitement and coastal charm as our restaurant offers impeccable customer service, delectable cuisine, and panoramic views of the Atlantic Ocean. Join us for an unforgettable experience where every touchdown is celebrated with exceptional food and an unbeatable backdrop of Miami's iconic skyline.
+            </p>
+
+            <div class="menu-button">
+              <a href="pages/contact.html">Contact Us</a>
+            </div>
+
+          </div>
+
+          <figure class="about-banner">
+
+            <img src="../images/mc-beach.jpg" width="570" height="200" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+
+            <div class="abs-img abs-img-2 has-before">
+              <img src="../images/badge-2.png" width="133" height="134" loading="lazy" alt="">
+            </div>
+
+          </figure>
+
+
+
+
+
+
+        </div>
+      </section>
+
+      <section class="special-dish text-center" aria-labelledby="dish-label" id="special-dishes" style="background-color: black">
+
+        <div class="special-dish-banner">
+          <img src="images/tomahawk.jpeg" width="100%" height="100vh" loading="lazy" alt="special dish"
+            class="img-cover">
+        </div>
+
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+
+            <img src="images/badge-1.png" width="28" height="41" loading="lazy" alt="badge" class="abs-img">
+
+            <p class="section-subtitle label-2">Today's Special</p>
+
+            <h2 class="headline-1 section-title">Seaside Steak</h2>
+
+            <p class="section-text">
+              Savor the game day excitement with our grilled steak, a culinary masterpiece 
+              inspired by centuries-old grilling traditions. Its rich history of communal gatherings 
+              aligns perfectly with the camaraderie of game day watching, creating a flavorful fusion that enhances
+              the thrill of cheering for your team. Elevate your game day experience with each perfectly grilled bite, 
+              turning every match into a celebration of both sport and savory indulgence.
+            </p>
+
+
+            <img src="../images/shape-3.png" width="197" height="194" loading="lazy" alt="" class="shape">
+
+
+            <div class="wrapper">
+
+              <span class="span body-1">$50.00</span>
+            </div>
+            <div class="menu-button">
+              <a href="pages/menu.html">View Our Menu</a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+ 
+    <script type="text/javascript"
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
+
+      <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
 </body>
 </html>

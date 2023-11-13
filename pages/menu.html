@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/menu-style.css">
     <script src="../js/script.js" defer></script>
     <script src="../js/cart.js" defer></script>
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+
 </head>
 <body>
     <section class="showcase">
@@ -21,8 +24,9 @@
           <div class="box-title">
             <div class="slide-in-text">
             <p class="box-head">OUR MENU</p>
-            <p class="box-content">Nestled along the sandy shores of Miami, Game Day Grill elevates beachside dining by offering a diverse menu crafted from the freshest ingredients. Our establishment not only delights the palate but also enhances the viewer experience on Game Day, with large screens and a lively ambiance that complements our top-quality ingredients.</p>
+            <p class="box-content">Nestled along the sandy shores of Miami, Game Day Grill elevates beachside dining by offering a diverse menu crafted from the freshest ingredients with current games streaming on television.</p>
         </div>
+        
     </div>
           
     </section>
@@ -39,18 +43,20 @@
         });
     </script>
 
+
+    
     <div class="menu">
         <ul>
           <li><a href="../index.html" class="underline-effect">Home</a></li>
           <li><a href="menu.html" class="active" class="underline-effect">Menu</a></li>
           <li><a href="reserve.html" class="underline-effect">Reserve</a></li>
           <li><a href="contact.html" class="underline-effect">Contact</a></li>
+          <li>    <div  class = "translate" id="google_translate_element"></div>      </li>
         </ul>
        
       </div>
 
-
-      <section class="main-content" style="background-color: #d1e6f7;"> 
+      <section class="main-content"> 
 
       <div class="heading">
         <h3>&mdash; MENU &mdash;</h3>
@@ -197,6 +203,24 @@
         </div>
 
     </section>
+
+    
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+ 
+    <script type="text/javascript"
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
 
 </body>
 
