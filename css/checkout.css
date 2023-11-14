@@ -26,7 +26,7 @@ body {
 .cart-items {
     flex: 1; /* Allow this section to grow */
     margin-right: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 8px;
     overflow-y: auto;
     max-height: 100%;
@@ -34,7 +34,7 @@ body {
 .cart-items, .checkout-form {
     flex: 1;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 8px;
 }
 
@@ -91,7 +91,7 @@ ul {
 }
 
 li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid white;
     padding: 10px 0;
     color: #fff;
 
@@ -113,7 +113,7 @@ li {
 	width: 100%;
 	background: none;
 	border: none;
-	border-bottom: 1px solid rgb(104, 104, 104);
+	border-bottom: 1px solid white;
 	outline: none;
 	padding: 20px 20px 20px 0;
 	margin: 0 0px;
@@ -139,9 +139,9 @@ label, input, select {
     width: 30%;
     justify-content: center;
     align-items: center;
-	background: #000;
-    color: #fff;
-    border: none;
+	background: #d1e6f7;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;
     font-family: Poppins;
     padding: 10px;
@@ -154,7 +154,12 @@ label, input, select {
 }
 
 .buttonCheckout:hover {
-    background-color: #d1e6f7;
-    color: black;
+    transform: scale(1.05);
+    background-color: #a2c9e9;
 }
+
+.form input::placeholder {
+    color: white; /* Change this color to your desired color */
+}
+
 

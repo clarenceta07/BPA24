@@ -1,87 +1,47 @@
-// Initialize the cart items array and total
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
-let total = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve the cart items from local storage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Function to update the cart display
-function displayCart() {
-    const cartList = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const totalQuantity = document.getElementById('total-quantity'); // New line
-
-    cartList.innerHTML = ''; // Clear the existing cart items
-
-
-    total = 0;
-    quantity = 0; // New line
-    cart.forEach(item => {
-        // Create a "Remove" button for the item
-        const removeButton = document.createElement('button');
-        removeButton.innerText = 'Remove';
-        removeButton.classList.add('remove-button');
-
-        // Add a click event listener to the remove button
-        removeButton.addEventListener('click', () => {
-            // Get the item to remove
-            const itemToRemove = cart.find(cartItem => cartItem.name === item.name);
-            removeItemFromCart(itemToRemove);
-        });
-
- // Create a list item for the cart
- const cartItem = document.createElement('li');
- cartItem.innerHTML = `
-     1x ${item.name}
- `;
-        
-        cartItem.appendChild(removeButton);
-
-        // Add the item to the cart display
-        cartList.appendChild(cartItem);
-
-        // Update the total
-        total += item.price;
-        quantity++; // Increment the quantity
-    });
-
-    cartTotal.textContent = `$${total.toFixed(2)}`;
-    totalQuantity.textContent = quantity; // Update the total quantity
-}
-
-// Function to remove an item from the cart
-function removeItemFromCart(itemToRemove) {
-    // Find the index of the item to remove
-    const itemIndex = cart.indexOf(itemToRemove);
-
-    if (itemIndex !== -1) {
-        // Remove the item from the cart
-        cart.splice(itemIndex, 1);
-
-        // Update the cart display
-        displayCart();
-
-        // Update local storage
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
-}
-
-// Add an event listener to each "Add To Cart" button
-const addToCartButtons = document.querySelectorAll('.shop-item-button');
-addToCartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Get the product details
-        const foodItem = button.parentElement.parentElement;
-        const itemName = foodItem.querySelector('h5').textContent;
-        const itemPrice = parseFloat(button.getAttribute('data-price')); // Get the item price from the data attribute
-
-        // Add the item to the cart
-        cart.push({ name: itemName, price: itemPrice });
-
-        // Update the cart display
-        displayCart();
-
-        // Update local storage
-        localStorage.setItem('cart', JSON.stringify(cart));
-    });
+    // Display order details on the checkout page
+    displayOrderDetails(cart);
 });
 
-// Display the cart when the page loads
-displayCart();
+function displayOrderDetails(cart) {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalQuantityElement = document.getElementById('total-quantity');
+    const cartTotalElement = document.getElementById('cart-total');
+
+    // Check if the cart is not empty
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        totalQuantityElement.textContent = '0';
+        cartTotalElement.textContent = '$0';
+        return;
+    }
+
+    // Initialize total variables
+    let totalQuantity = 0;
+    let totalAmount = 0;
+
+    // Iterate through the cart items and display details
+    cart.forEach(item => {
+        const cartItemElement = document.createElement('li');
+
+        // Display item name, quantity, and price
+        const itemDetails = document.createElement('p');
+        itemDetails.textContent = `${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}`;
+        cartItemElement.appendChild(itemDetails);
+
+        // Add the cart item to the container
+        cartItemsContainer.appendChild(cartItemElement);
+
+        // Update total variables
+    
+        totalQuantity += item.quantity;
+        totalAmount += item.price * item.quantity;
+    });
+
+    // Display the total quantity and total price
+    totalQuantityElement.textContent = totalQuantity.toString();
+    cartTotalElement.textContent = `$${totalAmount.toFixed(2)}`;
+}

@@ -32,7 +32,7 @@ body {
 .column {
 	width: 50%;
 	height: 100%;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid white;
 	margin: 20px;
 	border-radius: 20px;
 }
@@ -65,7 +65,7 @@ body {
 }
 
 .back-btn {
-	color: rgb(104, 104, 104);
+	color: white;
 	font-family: Poppins;
 	text-transform: uppercase;
 	font-size: 2rem;
@@ -104,7 +104,7 @@ body {
 	font-size: 14px;
 	font-weight: 400;
 	padding-bottom: 20px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1px solid white;
 }
 
 .nav-item {
@@ -114,7 +114,7 @@ body {
 }
 
 .active {
-	color: rgb(104, 104, 104);
+	color: white;
 }
 
 .card-img {
@@ -131,7 +131,7 @@ body {
 	width: 100%;
 	background: none;
 	border: none;
-	border-bottom: 1px solid rgb(104, 104, 104);
+	border-bottom: 1px solid white;
 	outline: none;
 	padding: 20px 20px 20px 0;
 	margin: 0 0px;
@@ -182,4 +182,8 @@ button:hover {
 	.column {
 		width: 94% !important;
 	}
+}
+
+.form input::placeholder {
+    color: white; /* Change this color to your desired color */
 }

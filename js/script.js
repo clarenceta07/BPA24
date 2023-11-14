@@ -34,19 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Initialize the cart items array and total
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
-let total = 0;
+const cartList = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+const totalQuantity = document.getElementById('total-quantity');
+const quantityElement = document.getElementById('quantity');
+const minusButton = document.getElementById('minus');
+const plusButton = document.getElementById('plus');
 
-// Function to update the cart display
-function displayCart() {
-    const cartList = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const totalQuantity = document.getElementById('total-quantity'); // New line
+// Initialize the cart items array and total
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let total = 0;
+let overallQuantity = 0;
+
+function updateCartDisplay() {
     cartList.innerHTML = ''; // Clear the existing cart items
 
     total = 0;
-    quantity = 0;
+    overallQuantity = 0;
+
     cart.forEach(item => {
         // Create a "Remove" button for the item
         const removeButton = document.createElement('button');
@@ -60,40 +65,76 @@ function displayCart() {
             removeItemFromCart(itemToRemove);
         });
 
+        // Create plus and minus buttons for quantity
+        const quantityControl = document.createElement('div');
+        quantityControl.classList.add('quantity-control');
+
+        const minusButton = document.createElement('button');
+        minusButton.innerText = '-';
+        minusButton.addEventListener('click', () => {
+            if (item.quantity > 1) {
+                item.quantity--;
+                quantityElement.textContent = item.quantity;
+                updateCartDisplay();
+            }
+        });
+
+        const quantityElement = document.createElement('span');
+        quantityElement.innerText = item.quantity;
+
+        const plusButton = document.createElement('button');
+        plusButton.innerText = '+';
+        plusButton.addEventListener('click', () => {
+            item.quantity++;
+            quantityElement.textContent = item.quantity;
+            updateCartDisplay();
+        });
+
+        quantityControl.appendChild(minusButton);
+        quantityControl.appendChild(quantityElement);
+        quantityControl.appendChild(plusButton);
+
         // Create a list item for the cart
         const cartItem = document.createElement('li');
-        cartItem.innerHTML = `1x ${item.name}`;
+        cartItem.innerHTML = `${item.quantity}x ${item.name}`;
+        cartItem.appendChild(quantityControl);
         cartItem.appendChild(removeButton);
 
         // Add the item to the cart display
         cartList.appendChild(cartItem);
 
         // Update the total
-        total += item.price;
-        quantity++;
-
-
+        total += item.price * item.quantity;
+        overallQuantity += item.quantity;
     });
 
     cartTotal.textContent = `$${total.toFixed(2)}`;
-    totalQuantity.textContent = quantity; // Update the total quantity
+    totalQuantity.textContent = overallQuantity;
 }
 
-// Function to remove an item from the cart
 function removeItemFromCart(item) {
-    // Find the index of the item to remove
     const itemIndex = cart.indexOf(item);
 
     if (itemIndex !== -1) {
-        // Remove the item from the cart
         cart.splice(itemIndex, 1);
-        // Update the cart display
-        displayCart();
-
-        // Update local storage
+        updateCartDisplay();
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 }
+
+// Event listener for plus button
+plusButton.addEventListener('click', () => {
+    overallQuantity++;
+    quantityElement.textContent = overallQuantity;
+});
+
+// Event listener for minus button
+minusButton.addEventListener('click', () => {
+    if (overallQuantity > 1) {
+        overallQuantity--;
+        quantityElement.textContent = overallQuantity;
+    }
+});
 
 // Add an event listener to each "Add To Cart" button
 const addToCartButtons = document.querySelectorAll('.shop-item-button');
@@ -105,21 +146,29 @@ addToCartButtons.forEach(button => {
         const itemPrice = parseFloat(button.getAttribute('data-price')); // Get the item price from the data attribute
         const itemImage = foodItem.querySelector('img').src;
 
-        // Add the item to the cart
-        cart.push({ name: itemName, price: itemPrice, image: itemImage });
+        // Check if the item is already in the cart
+        const existingItem = cart.find(item => item.name === itemName);
+
+        if (existingItem) {
+            // If the item already exists, increment its quantity
+            existingItem.quantity++;
+        } else {
+            // If the item is not in the cart, add it with quantity 1
+            cart.push({ name: itemName, price: itemPrice, image: itemImage, quantity: 1 });
+        }
 
         // Update local storage
         localStorage.setItem('cart', JSON.stringify(cart));
 
         // Update the cart display
-        displayCart();
-
-       
+        updateCartDisplay();
     });
 });
 
-// Display the cart when the page loads
-displayCart();
+updateCartDisplay(); // Call this function to initialize the cart display
+
+
+
 
 const shoppingCart = document.querySelector('.shopping-cart');
 const initialTop = 140; // Set the initial position here (adjust as needed)

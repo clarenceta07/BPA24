@@ -81,7 +81,7 @@
             <img src="../images/hamburger.jpeg">
             <div class="details">
                 <div class="details-sub">
-                    <h5>The Beachcomber Burger</h5>
+                    <h5>Beachfront Burger</h5>
                     <h5 class="price"> $16 </h5>
                 </div>
                 <p>A juicy beachfront burger topped with crispy bacon and mouth-watering lettuce.</p>
@@ -123,7 +123,7 @@
             <img src="../images/salmon.jpeg">
             <div class="details">
                 <div class="details-sub">
-                    <h5>Sunset Seafire</h5>
+                    <h5>Fire-Grilled Salmon</h5>
                     <h5 class="price"> $15 </h5>
                 </div>
                 <p>Tender salmon roasted to perfection, served with a sunset of flavors.
@@ -184,22 +184,20 @@
             <ul id="cart-items">
                 <!-- Cart items will be added dynamically here -->
             </ul>
-            
             <div class="bottom">
-            <div class="totalQuantity">
-                Items:
-                <p id="total-quantity">
-                0
-                </p>
+                <div class="totalQuantity">
+                    Items:
+                    <p id="total-quantity">0</p>
+                </div>
+                <p>Total: <span id="cart-total">$0</span></p>
             </div>
-            <p>Total: 
-                <span id="cart-total">
-                    $0
-                </span>
-            </p>
-        </div>
-
             <a href="checkout.html"><button class="checkout">Checkout</button></a>
+        </div>
+        
+        <div class="quantity-control" style="display: none;">
+            <button id="minus">-</button>
+            <span id="quantity">1</span>
+            <button id="plus">+</button>
         </div>
 
     </section>
