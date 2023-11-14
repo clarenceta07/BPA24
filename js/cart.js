@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Retrieve the cart items from local storage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+    const quantity = JSON.parse(localStorage.getItem('total-quantity'));
     // Display order details on the checkout page
     displayOrderDetails(cart);
 });
@@ -22,6 +22,7 @@ function displayOrderDetails(cart) {
     // Initialize total variables
     let totalQuantity = 0;
     let totalAmount = 0;
+    
 
     // Iterate through the cart items and display details
     cart.forEach(item => {
@@ -42,6 +43,6 @@ function displayOrderDetails(cart) {
     });
 
     // Display the total quantity and total price
-    totalQuantityElement.textContent = totalQuantity.toString();
+    totalQuantityElement.textContent = totalQuantity.toString() || '0';
     cartTotalElement.textContent = `$${totalAmount.toFixed(2)}`;
 }
