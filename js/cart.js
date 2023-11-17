@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve the cart items from local storage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const quantity = JSON.parse(localStorage.getItem('total-quantity'));
-    // Display order details on the checkout page
     displayOrderDetails(cart);
 });
-
 function displayOrderDetails(cart) {
     const cartItemsContainer = document.getElementById('cart-items');
     const totalQuantityElement = document.getElementById('total-quantity');

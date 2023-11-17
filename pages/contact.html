@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!--link-stylesheet----------->
+    <!--using-fontAwesome------------>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/specimen/PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <!--contact-form-container------------------->
+    
+
+    <section class="showcase">
+      <section id="contact">
+        <!--socail----------->
+        <div class="social">
+            <!--icons--------->
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-yelp"></i></a>
+        </div>
+        <!--contact-box------------->
+        <div class="contact-box">
+            <!--heading---------->
+            <div class="c-heading">
+                <h1>Contact Us</h1>
+            </div>
+            <!--inputs------------------>
+            <div class="c-inputs">
+                <form>
+                    <input style="font-family:Poppins" type="text" placeholder="Full Name"/>    
+                    <input style="font-family:Poppins" type="email" placeholder="email@gmail.com"/>
+                    <textarea style="font-family:Poppins" name="message" placeholder="Write Message"></textarea>
+                    <!--sumbit-btn----------->
+                    <button>SEND</button>
+                </form>
+            </div>
+        </div>
+        <!--map------------------->
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1701.5252574812218!2d74.31603229143637!3d31.46779655679461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391906abd2d8f2db%3A0x2d4bd93a1eb25b41!2sArfa%20Technologies!5e0!3m2!1sen!2s!4v1596774150754!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+        </div>
+    </section>
+        <nav class="sidebar">
+            <a class="click-image" href="../index.html">
+                <img class="menu-logo" src="../images/logo.png">
+            </a>
+            <div class="toggle" id="toggleButton"></div>
+        </nav>
+          
+        <div class="bg-container">
+            <video class="background" src="../videos/contact-bg.mp4" autoplay loop muted></video>
+        </div>
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html" class="underline-effect">Home</a></li>
+            <li><a href="menu.html" class="active" class="underline-effect">Menu</a></li>
+            <li><a href="reserve.html" class="underline-effect">Reserve</a></li>
+            <li><a href="contact.html" class="underline-effect">Contact</a></li>
+            <li><div class="translate" id="google_translate_element"></div></li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+</body>
+</html>

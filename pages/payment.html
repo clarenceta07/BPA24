@@ -35,7 +35,7 @@
 				</div>
 				<div class="form">
 					<div class="form-row">
-						<input type="text" id="cardNumber" placeholder="Card Number" />
+						<input type="text" id="cardNumber" placeholder="Card Number (fake)" />
 					</div>
 					<div class="form-row">
 						<input type="text" id="expirationDate" placeholder="Date" />
@@ -55,16 +55,11 @@
 				const purchaseButton = document.getElementById("purchaseButton");
 			
 				purchaseButton.addEventListener("click", function(event) {
-					if (cardNumberField.value !== "" && expirationDateField.value !== "" && cvvField.value !== "") {
 
 						window.location.href = "../index.html";
 						
 						alert("Your order has been completed and placed.");
-					} else {
-						event.preventDefault();
-						
-						alert("Please fill in all the required fields.");
-					}
+				
 				});
 			
 			var textWrapper = document.querySelector(".ml12");
