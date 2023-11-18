@@ -36,9 +36,16 @@ function displayOrderDetails(cart) {
     
         totalQuantity += item.quantity;
         totalAmount += item.price * item.quantity;
+
     });
 
     // Display the total quantity and total price
     totalQuantityElement.textContent = totalQuantity.toString() || '0';
     cartTotalElement.textContent = `$${totalAmount.toFixed(2)}`;
 }
+
+
+
+
+
+

@@ -21,6 +21,11 @@ body{
     transition: background-color 0.3s ease;
 }
 
+.shopping-cart #cart-items li p {
+    /* Adjust the font size as needed */
+    font-size: 1.3rem; /* Change this value to your desired font size */
+  }
+
 
 .background {
     width: 100%;
@@ -465,6 +470,7 @@ nav
     height: 2px;
     background-color: #ffffff; /* Use a faint gray color for the line */
     margin-bottom: 3%;
+    margin-top: 2%;
 }
 
 .shopping-cart li {

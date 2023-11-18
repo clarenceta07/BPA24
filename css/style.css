@@ -194,6 +194,8 @@ nav
   bottom: 0;
   left: 0;
   background: linear-gradient(transparent, #12182a);
+  pointer-events: none; /* Add this line to allow click events to pass through */
+
 }
 
 #about {

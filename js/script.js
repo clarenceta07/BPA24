@@ -41,82 +41,101 @@ const quantityElement = document.getElementById('quantity');
 const minusButton = document.getElementById('minus');
 const plusButton = document.getElementById('plus');
 
-// Initialize the cart items array and total
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let total = 0;
-let overallQuantity = 0;
 
 function updateLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem('total-quantity', JSON.stringify(overallQuantity));
 }
 
-function updateCartDisplay() {
-    cartList.innerHTML = ''; // Clear the existing cart items
+const cartItemsContainer = document.getElementById('cart-items');
+    const totalQuantityElement = document.getElementById('total-quantity');
+    const cartTotalElement = document.getElementById('cart-total');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    total = 0;
-    overallQuantity = 0;
+    function updateCartDisplay() {
+        cartItemsContainer.innerHTML = ''; // Clear the existing cart items
+    
+        let totalQuantity = 0;
+        let totalAmount = 0;
 
-    cart.forEach(item => {
-        // Create a "Remove" button for the item
-        const removeButton = document.createElement('button');
-        removeButton.innerText = 'Remove';
-        removeButton.classList.add('remove-button');
-
-        // Add a click event listener to the remove button
-        removeButton.addEventListener('click', () => {
-            // Get the item to remove
-            const itemToRemove = cart.find(cartItem => cartItem.name === item.name);
-            removeItemFromCart(itemToRemove);
+        if (cart.length === 0) {
+            const emptyCartMessage = document.createElement('p');
+            emptyCartMessage.textContent = 'Your cart is empty.';
+            cartItemsContainer.appendChild(emptyCartMessage);
+    
+            totalQuantityElement.textContent = '0';
+            cartTotalElement.textContent = '$0';
+            return;
+        }
+    
+        cart.forEach(item => {
+            const cartItemElement = document.createElement('li');
+            cartItemElement.classList.add('cart-item'); // Add a class for styling
+    
+            // Create a container for item details (left side)
+            const itemDetailsContainer = document.createElement('div');
+            itemDetailsContainer.classList.add('item-details');
+    
+            // Display item name and price on the left side
+            const itemDetails = document.createElement('p');
+            itemDetails.textContent = `${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}`;
+            itemDetailsContainer.appendChild(itemDetails);
+    
+            cartItemElement.appendChild(itemDetailsContainer);
+    
+            // Create plus and minus buttons container (right side)
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.classList.add('quantity-control');
+    
+            // Minus button
+            const minusButton = document.createElement('button');
+            minusButton.innerText = '-';
+            minusButton.addEventListener('click', () => {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    removeItemFromCart(item);
+                }
+                updateCartDisplay();
+            });
+    
+            // Quantity element
+            const quantityElement = document.createElement('span');
+            quantityElement.innerText = item.quantity;
+    
+            // Plus button
+            const plusButton = document.createElement('button');
+            plusButton.innerText = '+';
+            plusButton.addEventListener('click', () => {
+                item.quantity++;
+                updateCartDisplay();
+            });
+    
+            buttonsContainer.appendChild(minusButton);
+            buttonsContainer.appendChild(quantityElement);
+            buttonsContainer.appendChild(plusButton);
+    
+            cartItemElement.appendChild(buttonsContainer);
+    
+            cartItemsContainer.appendChild(cartItemElement);
+    
+            // Update total variables
+            totalQuantity += item.quantity;
+            totalAmount += item.price * item.quantity;
         });
+    
+        totalQuantityElement.textContent = totalQuantity.toString();
+        cartTotalElement.textContent = `$${totalAmount.toFixed(2)}`;
+    
+        // Save updated cart to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    
+    
 
-        // Create plus and minus buttons for quantity
-        const quantityControl = document.createElement('div');
-        quantityControl.classList.add('quantity-control');
+    updateCartDisplay(); // Call this function to initialize the cart display
 
-        const minusButton = document.createElement('button');
-        minusButton.innerText = '-';
-        minusButton.addEventListener('click', () => {
-            if (item.quantity > 1) {
-                item.quantity--;
-            }
-            updateCartDisplay();
-        });
 
-        const quantityElement = document.createElement('span');
-        quantityElement.innerText = item.quantity;
-
-        const plusButton = document.createElement('button');
-        plusButton.innerText = '+';
-        plusButton.addEventListener('click', () => {
-            item.quantity++;
-            updateCartDisplay();
-        });
-
-        quantityControl.appendChild(minusButton);
-        quantityControl.appendChild(quantityElement);
-        quantityControl.appendChild(plusButton);
-
-        // Create a list item for the cart
-        const cartItem = document.createElement('li');
-        cartItem.innerHTML = `${item.quantity}x ${item.name}`;
-        cartItem.appendChild(quantityControl);
-        cartItem.appendChild(removeButton);
-
-        // Add the item to the cart display
-        cartList.appendChild(cartItem);
-
-        // Update the total
-        total += item.price * item.quantity;
-        overallQuantity += item.quantity;
-    });
-
-    cartTotal.textContent = `$${total.toFixed(2)}`;
-    totalQuantity.textContent = overallQuantity;
-
-    // Save updated total quantity to local storage
-    localStorage.setItem('total-quantity', JSON.stringify(overallQuantity));
-}
 
 
 function removeItemFromCart(item) {
@@ -131,41 +150,12 @@ function removeItemFromCart(item) {
 
 
 
-// Event listener for plus button
-const plusButtons = document.querySelectorAll('.plus');
-plusButtons.forEach(plusButton => {
-    plusButton.addEventListener('click', (event) => {
-        const quantityElement = event.target.parentNode.querySelector('.quantity');
-        let quantity = parseInt(quantityElement.textContent);
-        quantity++;
-        quantityElement.textContent = quantity;
-
-        // Call a function to update the cart
-        updateCart(event.target);
-    });
-});
-
-// Event listener for minus button
-const minusButtons = document.querySelectorAll('.minus');
-minusButtons.forEach(minusButton => {
-    minusButton.addEventListener('click', (event) => {
-        const quantityElement = event.target.parentNode.querySelector('.quantity');
-        let quantity = parseInt(quantityElement.textContent);
-        if (quantity > 1) {
-            quantity--;
-            quantityElement.textContent = quantity;
-
-            // Call a function to update the cart
-            updateCart(event.target);
-        }
-    });
-});
 
 // Function to update the cart
 function updateCart(button) {
-    const foodItem = button.closest('.shop-item');
+    const foodItem = button.closest('.food-items');
     const itemName = foodItem.querySelector('h5').textContent;
-    const itemPrice = parseFloat(foodItem.getAttribute('data-price')); // Get the item price from the data attribute
+    const itemPrice = parseFloat(foodItem.querySelector('.price').textContent.replace('$', ''));
     const itemImage = foodItem.querySelector('img').src;
 
     // Check if the item is already in the cart
@@ -178,16 +168,18 @@ function updateCart(button) {
     } else {
         // If the item is not in the cart, add it with the specified quantity
         const quantity = parseInt(foodItem.querySelector('.quantity').textContent);
-        cart.push({ name: itemName, price: itemPrice, image: itemImage, quantity: 1 });
+        cart.push({ name: itemName, price: itemPrice, image: itemImage, quantity: quantity });
     }
 
     // Update local storage
-    localStorage.setItem('cart', JSON.stringify(cart));
+    updateLocalStorage();
 
     // Update the cart display
     updateCartDisplay();
-}
 
+    // Update the checkout page's displayed details
+    updateCheckoutPage(); // Call the function to display order details on the checkout page
+}
 
 
 // Add an event listener to each "Add To Cart" button
@@ -219,7 +211,16 @@ addToCartButtons.forEach(button => {
     });
 });
 
+function updateCheckoutPage() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    displayOrderDetails(cart);
+}
+
 updateCartDisplay(); // Call this function to initialize the cart display
+
+
+
+
 
 
 
