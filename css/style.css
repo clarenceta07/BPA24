@@ -11,7 +11,7 @@
 
 ::-webkit-scrollbar-track { background-color: transparent; }
 
-::-webkit-scrollbar-thumb { background-color: #fff !important; }
+::-webkit-scrollbar-thumb { background-color: #fff ; }
 
 nav
 {
@@ -94,6 +94,8 @@ nav
 {
   position: absolute;
   z-index: 1000;
+  top: 40%;
+  left: 5%;
 }
 
 .text h2
@@ -164,26 +166,16 @@ nav
 }
 .menu-links
 {
-  position: absolute !important;
+  position: absolute ;
   top: 0;
   right: 0;
   width: 300px;
   height: 100%;
-  display: flex !important;
-  justify-content: center !important; 
-  align-items: center !important;
+  display: flex ;
+  justify-content: center ; 
+  align-items: center ;
 }
-.translate {
-  padding-top: 10%;
-}
-.translate select{
-  color:#fff !important;
-  background-color: #12182a !important;
-  width: 10rem;
-  height: 2rem;
-  border-radius: 10px;
-  border: 2px solid black;
-}
+
 
 .showcase:before{
   z-index: 500;
@@ -281,17 +273,16 @@ body {
 }
 
 .translate select {
-  color:#d1e6f7;
-  background-color: #03385e;
+  color:#12182a;
+  background-color: #FFFFFF;
   width: 10rem;
   height: 2rem;
   font-family: Poppins;
+  font-weight: bold;
   border-radius: 10px;
+  border: 2px solid black;
 }
 
-#google_translate_element {
-  display: inline-block; /* Make the container inline-block to size it based on content */
-}
 
 
 
@@ -313,11 +304,11 @@ body {
 }
 
 .carousel-cell video::-webkit-media-controls {
-  display: none !important;
+  display: none ;
 }
 
 .carousel-cell video::-webkit-media-controls-enclosure {
-  display: none !important;
+  display: none ;
 }
 
 .carousel {
@@ -394,3 +385,32 @@ body {
   color: #03385e;
 }
 
+.box-title {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  height: 12.5rem;
+  background-color: white;
+  z-index: 1;
+  border: 10px solid #03385e;
+  user-select: none;
+}
+
+.box-head {
+  padding-left: 5%;
+  padding-top: 6%;
+  font-weight: 0;
+  font-size: 1.7rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.box-content {
+  padding-left: 5%;
+  padding-top: 1%;
+  margin-right: 5%;
+  padding-right: 1%;
+  font-size: .95rem;
+
+}

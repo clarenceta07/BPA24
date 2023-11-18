@@ -208,15 +208,15 @@ nav
   }
   
   .translate select {
-    color:#fff;
-    background-color: #12182a;
+    color:#12182a;
+    background-color: #FFFFFF;
     width: 10rem;
     height: 2rem;
     font-family: Poppins;
+    font-weight: bold;
     border-radius: 10px;
     border: 2px solid black;
   }
-
 .scroll-arrows {
     position: absolute;
     bottom: 10px;
