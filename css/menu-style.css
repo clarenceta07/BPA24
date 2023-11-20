@@ -93,7 +93,6 @@ nav
   min-height: 100vh;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   align-items: center;
   transition: 0.5s;
   z-index: 90;
@@ -231,9 +230,9 @@ nav
 }
 
 .arrow {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: solid #03385e;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: solid white;
     border-width: 0 4px 4px 0;
     transform: rotate(45deg);
     margin: 5px;
@@ -331,12 +330,7 @@ nav
   transform: translateY(-0.25em);
 }
 
-  #wrapper{
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    perspective: 30px;
-}
+
 
 .showcase:before{
     z-index: 888;
@@ -355,6 +349,7 @@ nav
 }
 .food-items img{
     position: relative;
+    height: 21vh;
     width: 100%;
     border-radius: 15px 20px 0 0;
     border: 2px solid white;

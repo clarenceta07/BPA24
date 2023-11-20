@@ -228,7 +228,7 @@ updateCartDisplay(); // Call this function to initialize the cart display
 const shoppingCart = document.querySelector('.shopping-cart');
 const initialTop = 140; // Set the initial position here (adjust as needed)
 const minTopPercentage = 150; // Minimum top position as a percentage
-const maxTopPercentage = 500; // Maximum top position as a percentage
+const maxTopPercentage = 300; // Maximum top position as a percentage
 
 window.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY || window.pageYOffset;
@@ -243,6 +243,8 @@ window.addEventListener('scroll', function() {
 
     shoppingCart.style.top = newTop + 'px';
 });
+
+
 
 const arrowElement = document.querySelector('.arrow');
 

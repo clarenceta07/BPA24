@@ -216,6 +216,10 @@ color: #fff;
   border: 2px solid black;
 }
 
+.fa-brands fa-x-twitter {
+	color: white;
+}
+
 /* Style for the heading */
 .c-heading h1 {
   position: relative; /* To position the line relative to the heading */
