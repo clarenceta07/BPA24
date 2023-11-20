@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <a href="menu.html" class="back-button">&larr; Back to Menu</a>
+   <a href="menu.html" class="back-button">&larr; Back to Menu</a>
 
 
     <div class="checkout-container">
@@ -25,8 +25,16 @@
 
         <!-- Checkout Form (Right Side) -->
         <div class="checkout-form">
-            <h1>Personal Details</h1>
-
+            <div class="nav">
+                <a class="nav-item" href="menu.html">menu</a>
+                ➝
+                <a class="nav-item" href="checkout.html">cart</a>
+                ➝
+                <a class="nav-item" href="payment.html" style="color:gray">purchase</a>
+            </div>
+            <div class="card">
+                <img src="../images/logo.png" alt="" />
+            </div>
             <div class="form">
                 <div class="form-row">
                     <input type="text" id="name" placeholder="Full Name"/>
@@ -65,6 +73,8 @@
                 alert("Please fill in all the required fields.");
             }
         });
+
+        
     </script>
  
 
