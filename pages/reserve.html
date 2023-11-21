@@ -1,219 +1,261 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Day Grill</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
-    <link rel="stylesheet" href="../css/reserve.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
-    <script src="script.js" defer></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve</title>
+  <!--link-stylesheet----------->
+  <!--using-fontAwesome------------>
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.google.com/specimen/PT+Serif" rel="stylesheet">
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+  <!-- Include jQuery UI CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Include jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+
+
+  <link rel="stylesheet" href="../css/reserve.css">
+  <script src="../js/script.js" defer></script>
+  <script src = "../js/reserve.js" defer></script>
+
+
 </head>
 <body>
-  <div id = "wrapper">
-    <section class="showcase">
+  <!--contact-form-container------------------->
+  
+
+  <section class="showcase">
+    <div class = "parentDiv">
+      <div id = "leftside" class = "secondParent" style = "border: 5px black;">
+          <img style = "width: 40vh; height: auto;" src = "../images/logo.png">
+          <button class="initbutton">RESERVE</button>
+      </div>
+      
+      <div id = "rightside" style = "display: none;"   class = "thirdParent">
+        <form id="reservationForm">
+
+          <div id="progressBarContainer">
+            <div id="progressBar" style="width: 50%;"></div> <!-- Start at 50% for step 1 -->
+         </div>
+
+          <!-- Step 1: Contact Information -->
+          <div id="step1">
+            <h2>Step 1: Personal Information</h2>
+          
+            <div class="form-item">
+              <input type="text" id="firstname" name="firstname" autocomplete="off" required>
+              <label for="firstname">First Name</label>
+            </div>
+            
+            <div class="form-item">
+              <input type="text" id="lastname" name="lastname" autocomplete="off" required>
+              <label for="lastname">Last Name</label>
+            </div>
+          
+            <div class="form-item">
+              <input type="text" id="phonenumber" name="phonenumber" autocomplete="off" required placeholder="(999) 999-9999" onkeydown="checkInput(event)" />
+              <label for="phonenumber">Phone Number</label>
+            </div>
+            
+            <div class="form-item">
+              <input type="email" id="email" name="email" autocomplete="off" required>
+              <label for="email">Email</label>
+            </div>
+            
+            <div class="form-item" style = "display:flex; justify-content: left;">
+              <button type="button" id="nextButton">Next</button>
+            </div>
+            
+          </div>
+      
+          <!-- Step 2: Reservation Details -->
+          <div id="step2" style="display: none;">
+              <h2>Step 2: Reservation Details</h2>
+
+              <div class="datetime-container">
+                <input type="text" id="reservationDate" required>
+                <select id="reservationTime" required>
+                    <!-- Options added by JavaScript -->
+                </select>
+              </div>
+
+              <!-- Your custom card for party size goes here -->
+              <div class="cont-cards">
+                <!-- 8 personas -->
+                <div class="card card-8-people">
+                  <!-- Container SVG -->
+                  <div class="cont-desk ">
+                    <div class="desk desk-8 quantity-1"> </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-description">
+                    <p>Table Reservation <b>(Max. 8)</b></p>
+                    <div class="cont-description">
+                      <h3 class="text-description">Party of </h3>
+            
+                      <button type ="button" class="btn btn-down" onclick="lowerQuantity('.desk-8',8)">
+                        <i class="fas fa-minus"></i>
+                      </button>
+            
+                      <span class="desk-8-text-counter text-counter">1</span>
+            
+                      <button type = "button" class="btn btn-plus" onclick="upQuantity('.desk-8',8)">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+            
+                  </div>
+                </div>
+                <!-- 8 personas -->
+            
+              </div>
+                <div class = "button-container">
+                  <button type="button" onclick="goToStep(1)">Back</button>
+                  <button type="submit" id = "submitReservation">Submit Reservation</button>
+                </div>
+                
+              
+              
+        </div>  
+      </div>
+    </form> 
+  </div>
+      
+</div>   
       <nav class="sidebar">
-          <a class="click-image" href="home.html">
-          <img class="menu-logo" width="14%" src="../images/logo.png">
+          <a class="click-image" href="../index.html">
+              <img class="menu-logo" src="../images/logo.png">
           </a>
           <div class="toggle" id="toggleButton"></div>
       </nav>
-        <img class="background" src="https://images.wallpaperscraft.com/image/single/evening_table_dinner_48367_3840x2160.jpg">
-        <div class="box-title">
-          <div class="slide-in-text">
-          <p class="box-head">OUR MENU</p>
-          <p class="box-content">Join us at Game Day Grille where the game meets the waves! Reserve your table for an unbeatable vibe by the shore. Cheers, chow down, and chill with the ocean view.</p>
-      </div>
-  </div>
         
+      <div class="bg-container">
+          <video class="background" src="../videos/reserve-bg.mp4" autoplay loop muted></video>
+      </div>
   </section>
-  
-  <div class="scroll-arrows">
-      <div class="arrow"></div>
-  
-  </div>
-  
-  
-  
+
   <div class="menu">
       <ul>
-        <li><a href="../index.html" class="underline-effect">Home</a></li>
-        <li><a href="menu.html" class="underline-effect">Menu</a></li>
-        <li><a href="#" class="active" class="underline-effect">Reserve</a></li>
-        <li><a href="contact.html" class="underline-effect">Contact</a></li>
+          <li><a href="../index.html" class="underline-effect">Home</a></li>
+          <li><a href="menu.html" class="underline-effect">Menu</a></li>
+          <li><a href="reserve.html" class="active" class="underline-effect">Reserve</a></li>
+          <li><a href="contact.html" class="underline-effect">Contact</a></li>
+          <li><div class="translate" id="google_translate_element"></div></li>
       </ul>
-     
   </div>
-  
-  <section class="maincontent">
-    <div class="floor-plan-container">
-      <div class="floor-plan-wrapper">
-        <img src="../images/floorplan2.png" alt="Restaurant Floor Plan">
-        
-        <!-- Circle Hotspots -->
-        <div class="hotspot circle" data-table="Table 1" style="top:715px; left:295px; width:96px; height:96px;"></div>
-        <div class="hotspot circle" data-table="Table 2" style="top:637px; left:423px; width:84px; height:84px;"></div>
-        <div class="hotspot circle" data-table="Table 3" style="top:510px; left:320px; width:78px; height:78px;"></div>
-        <div class="hotspot circle" data-table="Table 4" style="top:600px; left:247px; width:58px; height:58px;"></div>
-        <div class="hotspot circle" data-table="Table 5" style="top:405px; left:228px; width:76px; height:76px;"></div>
-        <div class="hotspot circle" data-table="Table 6" style="top:419px; left:378px; width:58px; height:58px;"></div>
-        <div class="hotspot circle" data-table="Table 7" style="top:427px; left:515px; width:92px; height:92px;"></div>
-        <div class="hotspot circle" data-table="Table 8" style="top:541px; left:476px; width:56px; height:56px;"></div>
-        <div class="hotspot circle" data-table="Table 9" style="top:308px; left:406px; width:80px; height:80px;"></div>
-        <div class="hotspot circle" data-table="Table 10" style="top:235px; left:310px; width:82px; height:82px;"></div>
-        <div class="hotspot circle" data-table="Table 11" style="top:138px; left:390px; width:92px; height:92px;"></div>
-        <div class="hotspot circle" data-table="Table 12" style="top:307px; left:555px; width:70px; height:70px;"></div>
-        <div class="hotspot circle" data-table="Table 13" style="top:305px; left:656px; width:80px; height:80px;"></div>
-        <div class="hotspot circle" data-table="Table 14" style="top:229px; left:757px; width:78px; height:78px;"></div>
-        <div class="hotspot circle" data-table="Table 16" style="top:865px; left:284px; width:50px; height:50px;"></div>
-        <div class="hotspot circle" data-table="Table 17" style="top:113px; left:298px; width:28px; height:28px;"></div>
-        <div class="hotspot circle" data-table="Table 18" style="top:113px; left:516px; width:32px; height:32px;"></div>
-        <div class="hotspot circle" data-table="Table 19" style="top:855px; left:136px; width:82px; height:82px;"></div>
-        
-        <!-- Rectangle Hotspots -->
-        <div class="hotspot rect" data-table="Table 15" style="top:579px; left:105px; width:71px; height:244px;"></div>
-        <div class="hotspot rect" data-table="Table 20" style="top:136px; left:141px; width:54px; height:175px;"></div>
+
+  <footer class="footer-distributed" style = "display: flex; justify-content: space-around; align-items: center;">
+
+    <div class="footer-left" style = "width: 34vw;">
+      <img width="50%" src="../images/logo.png">
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div class="footer-center" style = "width: 33vw;">
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="time-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="time"><p><span>Monday - Friday</span> 6PM - 1AM</p></ion-label>
+          <ion-label id="time"><p><span>Saturday</span> 3PM - 3AM</p></ion-label>
+        </ion-item> 
       </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="location-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="location"><p><span>444 S. Cedros Ave</span> Miami, Florida</p></ion-label>
+        </ion-item> 
+      </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="call-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="phone"><p>+1.555.555.5555</p></ion-label>
+        </ion-item> 
+      </div>
+
+      <div>
+        <ion-item color = "dark">
+          <ion-icon aria-hidden="true" name="mail-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
+          <!--Dynamically Load Number of Seats Here As An Ion-Label-->
+          <ion-label id="email"><p><a href="mailto:contact@gamedaygrille.com">contact@gamedaygrille.com</a></p></ion-label>
+        </ion-item> 
+      </div>
+
+    </div>
+
+    <div class="footer-right" style = "width: 34vw;">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Game Day Grille: Bringing the spirit of Miami Beach to life with island flavors and a lively, sports-friendly atmosphere.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-youtube"></ion-icon></i></a>
+        <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+
+      </div>
+
+      <p class="footer-links">
+        <a href="../index.html" class="link-1">Home</a>
+        
+        <a href="menu.html">Menu</a>
       
-      
-      <!-- Image Map Generated by http://www.image-map.net/ -->
-      
-      
-      
-      
-      <!-- The Info Panel -->
+        <a href="reserve.html">Reserve</a>
+        
+        <a href="#">Contact</a>
+      </p>
 
-      <ion-card color = "dark" style = "width: 60vh">
-        <ion-card-header>
-          <ion-card-title style = "text-align: center; font-size: 5vh; margin-top: 4vh; margin-bottom: 3vh; font-family: 'Poppins', sans-serif; font-weight: 600; ">ONLINE RESERVATION</ion-card-title>
-          <ion-card-subtitle id="cardSubHeading" style = "text-align: center; font-size: 3vh; margin-bottom: 3vh; ">Select a Table to See It's Details</ion-card-subtitle>
-        </ion-card-header>
+      <p class="footer-company-name">Game Day Grille © 2015</p>
 
-        <ion-card-content>
+    </div>
 
-          <div style = "display: flex; justify-content: space-between;">
+  </footer>
 
-            <ion-list style = "background-color: #222428; flex: 1">
+  <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+          );
+      }
+  </script>
 
-              <ion-item color = "dark">
-                <ion-icon aria-hidden="true" name="log-out-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
-                <!--Dynamically Load Table Id Here As An Ion-Label-->
-                <ion-label id="table-number">Table</ion-label>
-              </ion-item>
-
-              <ion-item color = "dark">
-                <ion-icon aria-hidden="true" name="people-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
-                <!--Dynamically Load Number of Seats Here As An Ion-Label-->
-                <ion-label id="table-seats">Seats</ion-label>
-              </ion-item>
-
-              <ion-item color = "dark">
-                <ion-icon aria-hidden="true" name="balloon-outline" slot="start" style = "margin-right: 1vh"></ion-icon>
-                <!--Dynamically Load Number of Seats Here As An Ion-Label-->
-                <ion-label id="table-type">Type</ion-label>
-              </ion-item>
-
-            </ion-list>
-            
-            <ion-list style = "background-color: #222428; flex: 1.5">
-              <ion-item color = "dark">
-              <ion-icon style = "margin-right: 1vh" name="time-outline" slot="start"></ion-icon>
-                
-              <ion-select id="table-times" interface="popover" placeholder="Select Time" class="always-flip" toggle-icon="caret-down-sharp">
-
-                <!--Dynamically Ion-Select components for each time interval in the data table. If it is true, display the time and make it availabe to select. If it is false, disable the ability to select but keep it visible.-->
-
-              </ion-select>
-              </ion-item>
-            </ion-list>
-
-          </div>
-
-          <div class = "formSection">
-            <ion-list style = "background-color: #222428">
-
-
-              <!--First Part-->
-              <ion-item color = "dark" style = "margin-top: 1vh; display:flex; justify-content: space-between;">
-                  <ion-item color = "dark">
-                    <ion-input label-placement="floating">
-                      <div slot="label">First Name <ion-text color="danger">(Required)</ion-text></div>
-                    </ion-input>
-                  </ion-item>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   
-                  <ion-item color = "dark">
-                    <ion-input label-placement="floating">
-                      <div slot="label">Last Name <ion-text color="danger">(Required)</ion-text></div>
-                    </ion-input>
-                  </ion-item>
-              </ion-item>
-
-              <!--Second Part-->
-              <ion-item color = "dark" style = "margin-top: 1vh; display:flex; justify-content: space-between;">                
-                <ion-item color = "dark">
-                  <ion-input label-placement="floating" placeholder = "youremail@email.com">
-                    <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
-                  </ion-input>
-                </ion-item>
-                <ion-item color = "dark">
-                  <ion-input label-placement="floating" placeholder="+1 (xxx) xxx-xxxx" id="phone">
-                    <div slot="label">Phone Number <ion-text color="warning">(Optional)</ion-text></div>
-                  </ion-input>
-                </ion-item>              
-             </ion-item>
-             
-             <!--Third Part-->
-             <ion-item color = "dark" style = "margin-top: 1vh; display:flex; justify-content: space-between;">
-              <ion-textarea label="Message" label-placement="floating" counter="true" maxlength="300" auto-grow = "true" clear-on-edit = "edit"></ion-textarea>
-             </ion-item>
-
-             <!--Fourth Part-->
-             <ion-item color = "dark" style = "margin-top: 1vh; display:flex; justify-content: space-between;">
-              
-             </ion-item>
-              <ion-button style = "width: 100%; height: 3vh;" color="light" shape = "round">Submit</ion-button>
-            </ion-list>
-
-          </div>
-
-         
-          
-          
-          
-        </ion-card-content>
-      </ion-card>
-      
-  </section>
-  <!-- The Popup -->
-  
-
-  <map name="image-map">
-    <area target="" alt="" title="" href="" coords="343,763,48" shape="circle">
-    <area target="" alt="" title="" href="" coords="465,679,42" shape="circle">
-    <area target="" alt="" title="" href="" coords="359,549,39" shape="circle">
-    <area target="" alt="" title="" href="" coords="276,629,29" shape="circle">
-    <area target="" alt="" title="" href="" coords="266,441,38" shape="circle">
-    <area target="" alt="" title="" href="" coords="407,448,29" shape="circle">
-    <area target="" alt="" title="" href="" coords="561,471,46" shape="circle">
-    <area target="" alt="" title="" href="" coords="502,569,28" shape="circle">
-    <area target="" alt="" title="" href="" coords="443,348,40" shape="circle">
-    <area target="" alt="" title="" href="" coords="350,276,41" shape="circle">
-    <area target="" alt="" title="" href="" coords="438,181,46" shape="circle">
-    <area target="" alt="" title="" href="" coords="591,340,35" shape="circle">
-    <area target="" alt="" title="" href="" coords="696,346,40" shape="circle">
-    <area target="" alt="" title="" href="" coords="797,268,39" shape="circle">
-    <area target="" alt="" title="" href="" coords="105,579,176,823" shape="rect">
-    <area target="" alt="" title="" href="" coords="309,885,25" shape="circle">
-    <area target="" alt="" title="" href="" coords="312,127,14" shape="circle">
-    <area target="" alt="" title="" href="" coords="528,129,16" shape="circle">
-    <area target="" alt="" title="" href="" coords="158,898,41" shape="circle">
-    <area target="" alt="" title="" href="" coords="141,136,195,311" shape="rect">
-</map>
-
-
-<script src="reserve.js" defer></script>
+  <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 </body>
+
+
+</html>

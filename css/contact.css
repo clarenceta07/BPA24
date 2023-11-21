@@ -362,6 +362,12 @@ a{
 	font-size: 1.1rem;
 	box-sizing: border-box;
 }
+.c-inputs p {
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .c-inputs button{
 	width:200px;
 	height: 40px;
