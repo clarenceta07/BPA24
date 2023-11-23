@@ -3,7 +3,6 @@
 {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -153,7 +152,7 @@ nav
   text-decoration: none;
   font-weight: 500;
   margin-top: 10px;
-  border: 2px solid hsl(38, 61%, 73%);
+  border: 2px solid #12182a;
   color: #111;
   letter-spacing: 2px;
   transition: 0.2s;
@@ -161,8 +160,8 @@ nav
 }
 .menu-button a:hover
 {
-  color: black;
-  background-color: hsl(38, 61%, 73%);
+  color: white;
+  background-color: #12182a;
 }
 .menu-links
 {
@@ -196,9 +195,9 @@ nav
 }
 
 #about-label {
-  font-size: 4.2rem !important;
+  font-size: 4.2rem ;
   display: inline;
-  margin-bottom: 0 !important;
+  margin-bottom: 0 ;
 }
 
 .menu
@@ -266,6 +265,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #12182a !important;
+  position: relative;
 }
 
 .footer {
@@ -597,6 +597,8 @@ body {
 
 	.footer-distributed .footer-center i{
 		margin-left: 0;
+
 	}
 
 }
+
