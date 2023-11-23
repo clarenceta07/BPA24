@@ -94,7 +94,7 @@ function goToStep(stepNumber) {
       step2.style.display = 'none';
   } else if (stepNumber === 2) {
       step1.style.display = 'none';
-      step2.style.display = 'block';
+      step2.style.display = 'block'; 
   }
 
   // Update progress bar if needed
@@ -103,7 +103,7 @@ function goToStep(stepNumber) {
       progressBar.style.width = stepNumber === 1 ? '50%' : '100%';
   }
 }
-
+ 
 //INPUT MASKING SECTION
 
 const maskType = {
@@ -289,5 +289,5 @@ function toggleBtn() {
 //
    // document.getElementById('rightside').appendChild(script);
 
-}, 3500);
+}, 2100);
 }

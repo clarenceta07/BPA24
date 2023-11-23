@@ -396,12 +396,19 @@ a{
 .c-inputs input::placeholder {
   color: white; /* Change this color to your desired color */
 }
+.c-inputs textarea::placeholder {
+	color: white; /* Change this color to your desired color */
+  }
 .c-inputs button:hover{
 	transform: scale(1.02);
   cursor: pointer;
 }
 .map{
-	border: 3px solid black;
+	border: 7px solid black;
+}
+.g-map {
+	width: 50rem;
+	height: 39.3rem;
 }
 @media(max-width:1100px){
 	.map{

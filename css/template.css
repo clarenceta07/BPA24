@@ -156,7 +156,7 @@ body.nav-active { overflow: hidden; }
 
 ::-webkit-scrollbar-track { background-color: transparent; }
 
-::-webkit-scrollbar-thumb { background-color: #03385e; }
+::-webkit-scrollbar-thumb { background-color: #fff; }
 
 
 
