@@ -171,7 +171,7 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-transform: translateY(-8%);
+transform: translateY(2%);
 }
 .active-menu {
   text-decoration: underline;
