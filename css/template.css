@@ -342,7 +342,7 @@ body.nav-active { overflow: hidden; }
   z-index: 1;
 }
 
-.bg-black-10 { background-color: #263563; }
+.bg-black-10 { background-color: #12182a; }
 
 .grid-list {
   display: grid;
@@ -894,7 +894,7 @@ body.nav-active { overflow: hidden; }
 }
 
 #about {
-  background-color: #12182a;
+  background-color: #263563;
 }
 
 .about .btn {
@@ -961,7 +961,7 @@ body.nav-active { overflow: hidden; }
 .special-dish-content { padding-block: 70px;}
 
 .special-dish-banner {
-  background-color: #263563;
+  background-color: #12182a;
 }
 
 
@@ -1139,7 +1139,7 @@ textarea.input-field {
 
 #events {
   margin-top: 48%;
-  background-color: #12182a;
+  background-color: #263563;
 }
 
 .event-card {
@@ -1189,6 +1189,7 @@ textarea.input-field {
   font-weight: var(--weight-bold);
   letter-spacing: var(--letterSpacing-1);
   line-height: 5px;
+  
 }
 
 .event-card .card-subtitle {

@@ -145,6 +145,7 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
+transform: translateY(-15%);
 }
 .active-menu {
   text-decoration: underline;
@@ -162,6 +163,7 @@ user-select: none;
 .menu ul li:hover
 {
 list-style: none;
+transition: 3s;
 transform: scale(1.2);
 }
 .menu ul li a
@@ -436,6 +438,148 @@ a{
 	}
 	
 }
+
+/* Footer styles */
+/* Footer styles */
+footer {
+	color: #fff;
+	font-family: Arial, sans-serif;
+	line-height: 1.6; /* Improves readability */
+  }
+  
+  .footer-top, .footer-bottom {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  }
+  
+  .footer-top {
+	padding-bottom: 20px;
+	background-color: #12182a;
+  }
+  
+  .footer-bottom {
+	padding: 15px;
+	justify-content: center;
+	background-color: #12182a;
+  }
+  
+  .column {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	text-align: center;
+  }
+  
+  .infoWrapper {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .info div, .links a, .time-column div {
+	margin: 5px 0;
+	font-size: 1.05vw; /* This will apply the same font size to the schedule text as well */
+  }
+  
+  /* Center the list with icons in the middle column */
+  .info {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centers the content */
+	width: 80%;
+  }
+  
+  .info div {
+	display: flex;
+	align-items: center; /* Aligns icons with text */
+	justify-content: flex-start; /* Aligns the block to the start of the flex container */
+	width: 100%;
+  }
+  
+  .info i {
+	min-width: 20px; /* Ensures icons don't get squished */
+	text-align: center; /* Center the icon */
+	margin-right: 20px; /* Space between icon and text */
+  }
+  
+  .links a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	margin: 5px 0;
+	text-align: left; /* Align text to the left */
+	font-size: 1.5rem;
+  }
+  
+  /* Social Media Icons */
+  .footer-bottom .icon {
+	margin: 0 5px;
+	color: #fff;
+  }
+  
+  /* Adjust the ratios */
+  .footer-top {
+	flex: 3 0 auto;
+  }
+  
+  .footer-bottom {
+	flex: 1 0 auto;
+  }
+  
+  /* Additional styles for logo image */
+  .footerLogo {
+	width: 15vw;
+	height: auto;
+	margin: 0 auto;
+  }
+  
+  /* Additional styles for the information icons */
+  
+  
+  .footerLogoText {
+	width: 20vw;
+  }
+  
+  .time-container {
+	display: flex;
+	align-items: center; /* Aligns the icon with the time schedule */
+	justify-content: center;
+	margin-bottom: 10px;
+  }
+  
+  .time-column{
+	display: flex; 
+	flex-direction: column;
+	align-items: center; /* This will center the text in each column */
+  }
+  
+  .icon{
+	font-size: 2rem;
+	margin-right: 15vw;
+  }
+  
+  
+  /* Responsive adjustments might be necessary if the layout breaks on smaller screens */
+  @media (max-width: 768px) {
+	/* Other responsive styles remain unchanged */
+   
+	.time-container {
+		flex-direction: column;
+		border: none;
+	}
+  
+	.time-column {
+		width: 100%; /* Full width on small screens */
+		padding: 5px 0;
+	}
+  
+	.time-divider {
+		display: none; /* Hide the divider on small screens */
+	}
+  }
+  
 
 
 
