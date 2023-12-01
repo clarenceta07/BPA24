@@ -411,7 +411,7 @@ a{
 	width: 50rem;
 	height: 39.3rem;
 }
-@media(max-width:1300px){
+@media(max-width:900px){
 	.map{
 		display: none;
 	}
